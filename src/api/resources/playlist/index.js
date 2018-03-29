@@ -1,3 +1,1 @@
-import express from 'express'
-
-export const playlistRouter = express.Router();
+export * from './playlist.restRouter'

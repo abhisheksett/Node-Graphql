@@ -1,3 +1,1 @@
-import express from 'express'
-
-export const songRouter = express.Router();
+export * from './song.restRouter'

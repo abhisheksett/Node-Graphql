@@ -10,7 +10,12 @@
   "author": "Abhishek Sett",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.2.0",
+    "lodash.merge": "^4.6.1",
+    "mongoose": "^5.0.12",
     "path": "^0.12.7"
   },
   "devDependencies": {

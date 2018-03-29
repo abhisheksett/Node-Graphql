@@ -1,3 +1,1 @@
-import express from 'express'
-
-export const userRouter = express.Router();
+export * from './user.restRouter'
