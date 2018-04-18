@@ -1,13 +1,14 @@
 import { makeExecutableSchema } from 'graphql-tools'
-import { userType } from './resources/user'
-import { songType } from './resources/song'
-import { playlistType } from './resources/playlist'
+import { userType, userResolvers } from './resources/user'
+import { songType, songResolvers } from './resources/song'
+import { playlistType, playlistResolvers } from './resources/playlist'
 import merge from 'lodash.merge'
 import { graphqlExpress } from 'apollo-server-express'
 
 const baseSchema = `
   schema {
     query: Query
+    mutation: Mutation
   }
 `
 
@@ -17,13 +18,13 @@ const schema = makeExecutableSchema({
     userType,
     songType,
     playlistType
-  ]
-  // resolvers: merge(
-  //   {},
-  //   userResolvers,
-  //   songResolvers,
-  //   playlistResolvers
-  // )
+  ],
+  resolvers: merge(
+    {},
+    songResolvers,
+    userResolvers,
+    playlistResolvers
+  )
 })
 
 

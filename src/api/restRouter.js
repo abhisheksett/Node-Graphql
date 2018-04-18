@@ -4,12 +4,9 @@ import { songRouter } from './resources/song'
 import { playlistRouter } from './resources/playlist'
 import { apiErrorHandler } from './modules/errorHandler'
 
-const restRouter = express.Router()
+export const restRouter = express.Router()
 
 restRouter.use('/user', userRouter)
 restRouter.use('/song', songRouter)
 restRouter.use('/playlist', playlistRouter)
-
 restRouter.use(apiErrorHandler)
-
-export default restRouter;
