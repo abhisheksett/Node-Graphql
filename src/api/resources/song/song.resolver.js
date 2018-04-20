@@ -1,6 +1,6 @@
 import { Song } from './song.model'
 
-export default {
+const songResolver = {
 
   Query: {
     Song(id) {
@@ -24,4 +24,6 @@ export default {
     }
   }
 
-}
+};
+
+export default songResolver;

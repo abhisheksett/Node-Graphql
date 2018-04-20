@@ -1,7 +1,7 @@
 import { makeExecutableSchema } from 'graphql-tools'
-import { userType, userResolvers } from './resources/user'
-import { songType, songResolvers } from './resources/song'
-import { playlistType, playlistResolvers } from './resources/playlist'
+import { userType, userResolver } from './resources/user'
+import { songType, songResolver } from './resources/song'
+import { playlistType, playlistResolver } from './resources/playlist'
 import merge from 'lodash.merge'
 import { graphqlExpress } from 'apollo-server-express'
 
@@ -21,10 +21,11 @@ const schema = makeExecutableSchema({
   ],
   resolvers: merge(
     {},
-    songResolvers,
-    userResolvers,
-    playlistResolvers
-  )
+    userResolver,
+    songResolver,
+    playlistResolver
+  ),
+  resolverValidationOptions: { requireResolversForAllFields: false } 
 })
 
 
